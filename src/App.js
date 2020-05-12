@@ -1,25 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import Profile from './Profile/Profile';
+import Comments from './Comments/Comments';
+import { Container } from '@material-ui/core';
+import Header from './Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>      
+      <div className="App">
+        <Header />
+        <Container fixed>                    
+          <Profile />
+          <Comments />
+        </Container>
+      </div>
+      
+    </BrowserRouter>
   );
 }
 
