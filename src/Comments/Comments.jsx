@@ -1,18 +1,16 @@
 import React from 'react';
 import style from './Comments.module.css'
+import Message from './Message/Message';
 
-const Comments = () => {
+
+const Comments = (props) => {
+    
+    
+    let commentElement = props.comments.comment.map ( c => <Message name={c.name} time={c.time} date={c.date} comment={c.comment} />);
+    
     return (
         <div>
-            <div className={style.area}>
-                Comments 1
-            </div>
-            <div className={style.area}>
-                Comments 2
-            </div>
-            <div className={style.area}>
-                Comments 3
-            </div>
+            {commentElement}            
         </div>
     )
 }

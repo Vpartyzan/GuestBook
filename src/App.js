@@ -7,14 +7,14 @@ import Comments from './Comments/Comments';
 import { Container } from '@material-ui/core';
 import Header from './Header/Header';
 
-function App() {
+function App(props) {
   return (
     <BrowserRouter>      
       <div className="App">
         <Header />
         <Container fixed>                    
           <Profile />
-          <Comments />
+          <Comments comments={props.state} />
         </Container>
       </div>
       

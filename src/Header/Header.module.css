@@ -1,6 +1,7 @@
 .header {
     background-color: rgb(44, 44, 172);
     text-align: center;
+    box-shadow: 0px 5px 5px grey;
 }
 
 h1 {
