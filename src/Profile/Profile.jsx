@@ -11,23 +11,41 @@ const useStyles = makeStyles((theme) => ({
         width: '380px',
       },
     },
-  }));
+}));
 
-const Profile = () => {    
+const Profile = (props) => {
 
     const classes = useStyles();
+
+    let newName = React.createRef();
+    let newMessage = React.createRef();
+
+    let addComment = () => {
+        props.addComment();
+    }
+
+    let onBlankNameChange = () => {
+        let name = newName.current.value;        
+        props.updateNewNameText(name);
+    } 
+    
+    let onBlankMessageChange = () => {
+        let message = newMessage.current.value;
+        props.updatenewMessageText(message);
+    }   
 
     return (
         <div className={style.header}>
             
                 <div className={classes.root} noValidate autoComplete="off">                    
-                    <TextField id="outlined-basic" label="Name" variant="outlined" />
+                    <textarea onChange={onBlankNameChange} ref={newName} value={props.state.newName} />
                 </div>
                 <div className={classes.root} noValidate autoComplete="off">
-                    <TextField id="outlined-basic" label="Message" variant="outlined" />                    
+                    <textarea onChange={onBlankMessageChange} ref={newMessage} value={props.state.newMessage} />
+                   {/* <TextField onChange={onBlankMessageChange} id="message" label="Message" variant="outlined" ref={newMessage} value={props.state.newMessage} /> */}                   
                 </div>
                 <div className={style.btn}>
-                    <Button variant="contained" color="primary">
+                    <Button onClick={addComment} variant="contained" color="primary">
                         Send message
                     </Button>
                 </div>

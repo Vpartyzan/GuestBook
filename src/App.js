@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom';
 import Profile from './Profile/Profile';
@@ -13,8 +12,8 @@ function App(props) {
       <div className="App">
         <Header />
         <Container fixed>                    
-          <Profile />
-          <Comments comments={props.state} />
+          <Profile state={props.state} addComment={props.addComment} updateNewNameText={props.updateNewNameText} updatenewMessageText={props.updatenewMessageText} />
+          <Comments comments={props.state}  />
         </Container>
       </div>
       
