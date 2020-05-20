@@ -3,8 +3,7 @@ import Message from './Message/Message';
 
 
 const Comments = (props) => {
-    
-    
+        
     let commentElement = props.comments.comment.map ( c => <Message name={c.name} time={c.time} date={c.date} comment={c.comment} />);
     
     return (

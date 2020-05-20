@@ -21,17 +21,17 @@ const Profile = (props) => {
     let newMessage = React.createRef();
 
     let addComment = () => {
-        props.addComment();
+        props.dispatch({type: 'ADD-COMMENT'});
     }
 
     let onBlankNameChange = () => {
         let name = newName.current.value;        
-        props.updateNewNameText(name);
+        props.dispatch({type: 'UPDATE-NEW-NAME-TEXT', newName: name});
     } 
     
     let onBlankMessageChange = () => {
         let message = newMessage.current.value;
-        props.updatenewMessageText(message);
+        props.dispatch({type: 'UPDATE-NEW-MESSAGE-TEXT', newMessage: message});
     }   
 
     return (

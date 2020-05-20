@@ -6,13 +6,13 @@ import Comments from './Comments/Comments';
 import { Container } from '@material-ui/core';
 import Header from './Header/Header';
 
-function App(props) {
+function App(props) {  
   return (
     <BrowserRouter>      
       <div className="App">
         <Header />
         <Container fixed>                    
-          <Profile state={props.state} addComment={props.addComment} updateNewNameText={props.updateNewNameText} updatenewMessageText={props.updatenewMessageText} />
+          <Profile state={props.state} dispatch={props.dispatch} />
           <Comments comments={props.state}  />
         </Container>
       </div>
